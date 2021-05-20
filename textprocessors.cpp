@@ -11,7 +11,14 @@ int count_words(const char *text) {
 }
 
 int count_numbers(const char *text) {
-    return 0;
+    int count = 0;
+    for (int i = 0; text[i] != '\0'; i++) {
+        char currentChar = text[i];
+        if (isdigit(currentChar)) {
+            count++;
+        }
+    }
+    return count;
 }
 
 void lowercase_letters(char * const text) {
