@@ -15,7 +15,12 @@ int count_numbers(const char *text) {
 }
 
 void lowercase_letters(char *text) {
-
+    for (int i = 0; text[i] != '\0'; i++){
+        char currentChar = text[i];
+        if (isupper(currentChar)) {
+            text[i] = currentChar + 32;
+        }
+    }
 }
 
 // Johnny Text Processors
