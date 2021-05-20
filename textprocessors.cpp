@@ -6,16 +6,18 @@
 
 // Kaleb Text Processors
 
-int count_words(char *text) {
+int count_words(const char *text) {
     return 0;
 }
 
-int count_numbers(char *text) {
+int count_numbers(const char *text) {
     return 0;
 }
 
-void lowercase_letters(char *text) {
-
+void lowercase_letters(char * const text) {
+    for (int i = 0; text[i] != '\0'; i++){
+        text[i] = tolower(text[i]);
+    }
 }
 
 // Johnny Text Processors
