@@ -14,12 +14,9 @@ int count_numbers(const char *text) {
     return 0;
 }
 
-void lowercase_letters(char *text) {
+void lowercase_letters(char * const text) {
     for (int i = 0; text[i] != '\0'; i++){
-        char currentChar = text[i];
-        if (isupper(currentChar)) {
-            text[i] = currentChar + 32;
-        }
+        text[i] = tolower(text[i]);
     }
 }
 
