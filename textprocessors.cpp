@@ -6,11 +6,11 @@
 
 // Kaleb Text Processors
 
-int count_words(char *text) {
+int count_words(const char *text) {
     return 0;
 }
 
-int count_numbers(char *text) {
+int count_numbers(const char *text) {
     return 0;
 }
 
