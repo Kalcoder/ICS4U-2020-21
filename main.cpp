@@ -1,6 +1,9 @@
 #include <iostream>
 #include "textprocessors.h"
 
-int main() {
+using namespace std;
 
+int main() {
+    cout << "Hello, World!" << endl;
+    return 0;
 }
