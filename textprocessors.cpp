@@ -13,10 +13,10 @@ int count_words(char *text) {
         char currentChar = text[i];
         if (isspace(currentChar) || ispunct(currentChar)) {
             if (startedWord) {
-                count++;
                 startedWord = false;
             }
-        } else if (isalpha(currentChar)) {
+        } else if (isalpha(currentChar) && !startedWord) {
+            count++;
             startedWord = true;
         }
     }
