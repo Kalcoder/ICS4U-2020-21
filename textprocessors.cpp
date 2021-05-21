@@ -7,7 +7,20 @@
 // Kaleb Text Processors
 
 int count_words(const char *text) {
-    return 0;
+    bool startedWord = false;
+    int count = 0;
+    for (int i = 0; text[i] != '\0'; i++) {
+        char currentChar = text[i];
+        if (isspace(currentChar) || ispunct(currentChar)) {
+            if (startedWord) {
+                startedWord = false;
+            }
+        } else if (isalpha(currentChar) && !startedWord) {
+            count++;
+            startedWord = true;
+        }
+    }
+    return count;
 }
 
 int count_numbers(const char *text) {
