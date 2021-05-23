@@ -7,9 +7,9 @@
 #include <string>
 
 // Kaleb Text Processors
-int count_words(char *text);
-int count_numbers(char *text);
-void lowercase_letters(char *text);
+int count_words(const char *text);
+int count_numbers(const char *text);
+void lowercase_letters(char * const text);
 
 // Johnny Text Processors
 void leet_case(char *text);
