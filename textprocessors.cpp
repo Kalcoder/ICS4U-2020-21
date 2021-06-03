@@ -25,12 +25,15 @@ void leet_case(char *text) {
 }
 
 
-void capitalize_letters(char * const text) {
+void capitalize_letters(char * text) {
     for (int i = 0; text[i] != '\0'; ++i) {
         text[i] = (char) toupper(text[i]);
     }
 }
 
+void capitalize_letters(string &text) {
+    capitalize_letters(&text[0]);
+}
 void search_replace(char *text, char *search, char *replace) {
 
 }
