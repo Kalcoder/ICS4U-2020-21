@@ -4,7 +4,8 @@
 
 #ifndef FINAL_PROJECT_TEXTPROCESSORS_H
 #define FINAL_PROJECT_TEXTPROCESSORS_H
-#include <string>
+#include <iostream>
+using namespace std;
 
 // Kaleb Text Processors
 int count_words(char *text);
@@ -13,7 +14,7 @@ void lowercase_letters(char *text);
 
 // Johnny Text Processors
 void leet_case(char *text);
-void capitalize_letters(char *text);
+void capitalize_letters(char * const text);
 void search_replace(char *text, char *search, char *replace);
 
 #endif //FINAL_PROJECT_TEXTPROCESSORS_H
