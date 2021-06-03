@@ -1,4 +1,3 @@
-
 #include "textprocessors.h"
 
 int main() {
