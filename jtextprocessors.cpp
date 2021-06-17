@@ -3,20 +3,7 @@
 //
 
 #include "jtextprocessors.h"
-
-// Kaleb Text Processors
-
-int count_words(char *text) {
-    return 0;
-}
-
-int count_numbers(char *text) {
-    return 0;
-}
-
-void lowercase_letters(string text) {
-
-}
+#include "ktextprocessors.h"
 
 // Johnny Text Processors
 
@@ -49,10 +36,10 @@ const std::map<char, std::string> leets = {
     {'z', "7_"},
 };
 
-void leet_case(string &text) {
+void leet_case(std::string &text) {
     lowercase_letters(text); // Compares everything at lowercase since it's easier
     for (const auto& leet : leets) {
-        string search(1, leet.first);
+        std::string search(1, leet.first);
         search_replace(text, search, leet.second);
     }
 }
@@ -65,7 +52,7 @@ void capitalize_letters(char * text) {
 }
 
 
-void search_replace(string &text, const string search, const string replace) {
+void search_replace(std::string &text, const std::string search, const std::string replace) {
     unsigned int skips = 0; // Number of characters to skip if we just replaced something
     for (int i = 0; text[i] != '\0'; ++i) { // going through each character of text
         if (skips > 0) { // If we need to skip
