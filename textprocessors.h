@@ -4,6 +4,7 @@
 
 #ifndef FINAL_PROJECT_TEXTPROCESSORS_H
 #define FINAL_PROJECT_TEXTPROCESSORS_H
+#include <string>
 #include <iostream>
 using namespace std;
 
@@ -16,6 +17,6 @@ void lowercase_letters(char *text);
 void leet_case(char *text);
 void capitalize_letters(char *text);
 void capitalize_letters(string &text); 
-void search_replace(char *text, char *search, char *replace);
+void search_replace(string &text, const string search, const string replace);
 
 #endif //FINAL_PROJECT_TEXTPROCESSORS_H
