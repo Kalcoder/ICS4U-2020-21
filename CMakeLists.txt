@@ -21,7 +21,7 @@ project(Final_Project)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Final_Project main.cpp textprocessors.h textprocessors.cpp Tui.cpp Tui.h)
+add_executable(Final_Project main.cpp jtextprocessors.h jtextprocessors.cpp Tui.cpp Tui.h ktextprocessors.cpp ktextprocessors.h)
 
 target_link_libraries(Final_Project
         PRIVATE ftxui::screen

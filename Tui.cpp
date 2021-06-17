@@ -3,7 +3,8 @@
 //
 
 #include "Tui.h"
-#include "textprocessors.h"
+#include "jtextprocessors.h"
+#include "ktextprocessors.h"
 
 void Tui::render() {
     // Initial input box

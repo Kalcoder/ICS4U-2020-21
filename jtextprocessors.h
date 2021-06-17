@@ -6,14 +6,6 @@
 #define FINAL_PROJECT_TEXTPROCESSORS_H
 #include <string>
 
-// Kaleb Text Processors
-int count_words_char(char *text);
-int count_words(std::string text);
-int count_numbers_char(char *text);
-int count_numbers(std::string text);
-std::string lowercase_letters_char(char *text);
-std::string lowercase_letters(std::string text);
-
 // Johnny Text Processors
 std::string leet_case_char(char *text);
 std::string leet_case(std::string text);
