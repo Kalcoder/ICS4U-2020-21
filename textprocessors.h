@@ -7,13 +7,19 @@
 #include <string>
 
 // Kaleb Text Processors
-int count_words(const char *text);
-int count_numbers(const char *text);
-void lowercase_letters(char * const text);
+int count_words_char(char *text);
+int count_words(std::string text);
+int count_numbers_char(char *text);
+int count_numbers(std::string text);
+std::string lowercase_letters_char(char *text);
+std::string lowercase_letters(std::string text);
 
 // Johnny Text Processors
-void leet_case(char *text);
-void capitalize_letters(char *text);
-void search_replace(char *text, char *search, char *replace);
+std::string leet_case_char(char *text);
+std::string leet_case(std::string text);
+std::string capitalize_letters_char(char *text);
+std::string capitalize_letters(std::string text);
+std::string search_replace_char(char *text, char *search, char *replace);
+std::string search_replace(std::string text, std::string search, std::string replace);
 
 #endif //FINAL_PROJECT_TEXTPROCESSORS_H
