@@ -15,7 +15,7 @@ int count_numbers(char *text) {
     return 0;
 }
 
-void lowercase_letters(char *text) {
+void lowercase_letters(string text) {
 
 }
 
@@ -23,6 +23,7 @@ void lowercase_letters(char *text) {
 
 void leet_case(string text) {
     std::map<char, std::string> leets {};
+    lowercase_letters(text); // Compares everything at lowercase since it's easier
     for (const auto& leet : leets) {
         string search(1, leet.first);
         search_replace(text, search, leet.second);

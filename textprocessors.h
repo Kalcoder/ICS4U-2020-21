@@ -11,7 +11,7 @@ using namespace std;
 // Kaleb Text Processors
 int count_words(char *text);
 int count_numbers(char *text);
-void lowercase_letters(char *text);
+void lowercase_letters(string text);
 
 // Johnny Text Processors
 void leet_case(string text);
