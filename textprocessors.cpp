@@ -32,7 +32,7 @@ void capitalize_letters(char * text) {
 }
 
 
-void search_replace(string &text, string &search, string &replace) {
+void search_replace(string &text, const string search, const string replace) {
     unsigned int skips = 0; // Number of characters to skip if we just replaced something
     for (int i = 0; text[i] != '\0'; ++i) { // going through each character of text
         if (skips > 0) { // If we need to skip
@@ -51,4 +51,3 @@ void search_replace(string &text, string &search, string &replace) {
         skips = replace.size() - 1; // Skip the newly added characters (-1 cause we just finished a character)
     }
 }
-
