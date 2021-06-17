@@ -72,5 +72,5 @@ std::string search_replace(std::string text, const std::string search, const std
         text = text.replace(i, search.size(), replace);
         skips = replace.size() - 1; // Skip the newly added characters (-1 cause we just finished a character)
     }
-  return text;
+    return text;
 }
