@@ -7,7 +7,20 @@
 // Kaleb Text Processors
 
 int count_words_char(char *text) {
-    return 0;
+    bool startedWord = false;
+    int count = 0;
+    for (int i = 0; text[i] != '\0'; i++) {
+        char currentChar = text[i];
+        if (isspace(currentChar) || ispunct(currentChar)) {
+            if (startedWord) {
+                startedWord = false;
+            }
+        } else if (isalpha(currentChar) && !startedWord) {
+            count++;
+            startedWord = true;
+        }
+    }
+    return count;
 }
 
 int count_words(std::string text) {
@@ -15,7 +28,14 @@ int count_words(std::string text) {
 }
 
 int count_numbers_char(char *text) {
-    return 0;
+    int count = 0;
+    for (int i = 0; text[i] != '\0'; i++) {
+        char currentChar = text[i];
+        if (isdigit(currentChar)) {
+            count++;
+        }
+    }
+    return count;
 }
 
 int count_numbers(std::string text) {
@@ -23,7 +43,10 @@ int count_numbers(std::string text) {
 }
 
 std::string lowercase_letters_char(char *text) {
-    return "test";
+    for (int i = 0; text[i] != '\0'; i++){
+        text[i] = tolower(text[i]);
+    }
+    return text;
 }
 
 std::string lowercase_letters(std::string text) {
