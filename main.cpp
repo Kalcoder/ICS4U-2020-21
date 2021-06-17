@@ -1,9 +1,7 @@
-#include <iostream>
-#include "textprocessors.h"
-
-using namespace std;
+#include "Tui.h"
 
 int main() {
-    cout << "Hello, World!" << endl;
+    Tui tui;
+    tui.render();
     return 0;
 }
