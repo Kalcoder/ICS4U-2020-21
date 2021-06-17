@@ -1,0 +1,19 @@
+//
+// Created by kaleb on 2021-05-20.
+//
+
+#include "jtextprocessors.h"
+
+// Johnny Text Processors
+
+std::string leet_case(std::string text) {
+    return "test";
+}
+
+std::string capitalize_letters(std::string text) {
+    return "test";
+}
+
+std::string search_replace(std::string text, const std::string search, const std::string replace) {
+    return "test";
+}
