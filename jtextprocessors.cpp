@@ -2,7 +2,7 @@
 // Created by kaleb on 2021-05-20.
 //
 
-#include "textprocessors.h"
+#include "jtextprocessors.h"
 
 // Kaleb Text Processors
 
