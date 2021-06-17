@@ -7,8 +7,8 @@
 #include <string>
 
 // Kaleb Text Processors
-int count_words(char *text);
-int count_numbers(char *text);
-void lowercase_letters(std::string text);
+int count_words(const std::string text);
+int count_numbers(const std::string text);
+std::string lowercase_letters(std::string text);
 
 #endif //FINAL_PROJECT_KTEXTPROCESSORS_H
