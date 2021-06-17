@@ -2,6 +2,7 @@
 // Created by kaleb on 2021-05-20.
 //
 
+#include <map>
 #include "textprocessors.h"
 
 // Kaleb Text Processors
@@ -21,7 +22,7 @@ void lowercase_letters(char *text) {
 // Johnny Text Processors
 
 void leet_case(char *text) {
-
+    std::map<char, std::string> leets {};
 }
 
 
