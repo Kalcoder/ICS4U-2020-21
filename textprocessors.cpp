@@ -21,8 +21,12 @@ void lowercase_letters(char *text) {
 
 // Johnny Text Processors
 
-void leet_case(char *text) {
+void leet_case(string text) {
     std::map<char, std::string> leets {};
+    for (const auto& leet : leets) {
+        string search(1, leet.first);
+        search_replace(text, search, leet.second);
+    }
 }
 
 
