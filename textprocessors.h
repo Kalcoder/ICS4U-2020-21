@@ -16,6 +16,7 @@ void lowercase_letters(char *text);
 // Johnny Text Processors
 void leet_case(char *text);
 void capitalize_letters(char *text);
+void capitalize_letters(string &text); 
 void search_replace(string &text, string &search, string &replace);
 
 #endif //FINAL_PROJECT_TEXTPROCESSORS_H

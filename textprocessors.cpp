@@ -24,9 +24,13 @@ void leet_case(char *text) {
 
 }
 
-void capitalize_letters(char *text) {
 
+void capitalize_letters(char * text) {
+    for (int i = 0; text[i] != '\0'; ++i) {
+        text[i] = (char) toupper(text[i]);
+    }
 }
+
 
 void search_replace(string &text, string &search, string &replace) {
     unsigned int skips = 0; // Number of characters to skip if we just replaced something
