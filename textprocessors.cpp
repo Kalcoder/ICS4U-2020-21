@@ -14,14 +14,47 @@ int count_numbers(char *text) {
     return 0;
 }
 
-void lowercase_letters(char *text) {
+void lowercase_letters(string text) {
 
 }
 
 // Johnny Text Processors
 
-void leet_case(char *text) {
+const std::map<char, std::string> leets = {
+    {'a', "4"},
+    {'b', "6"},
+    {'c', "["},
+    {'d', "|)"},
+    {'e', "3"},
+    {'f', "|="},
+    {'g', "9"},
+    {'h', "#"},
+    {'i', "!"},
+    {'j', "._|"},
+    {'k', "|<"},
+    {'l', "1"},
+    {'m', "/\\/\\"},
+    {'n', "/\\/"},
+    {'o', "0"},
+    {'p', "|*"},
+    {'q', "0_"},
+    {'r', "|2"},
+    {'s', "5"},
+    {'t', "7"},
+    {'u', "|_|"},
+    {'v', "\\/"},
+    {'w', "\\/\\/"},
+    {'x', "><"},
+    {'y', "`/"},
+    {'z', "7_"},
+};
 
+void leet_case(string &text) {
+    lowercase_letters(text); // Compares everything at lowercase since it's easier
+    for (const auto& leet : leets) {
+        string search(1, leet.first);
+        search_replace(text, search, leet.second);
+    }
 }
 
 
