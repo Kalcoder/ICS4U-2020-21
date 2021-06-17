@@ -49,7 +49,7 @@ const std::map<char, std::string> leets = {
     {'z', "7_"},
 };
 
-void leet_case(string text) {
+void leet_case(string &text) {
     lowercase_letters(text); // Compares everything at lowercase since it's easier
     for (const auto& leet : leets) {
         string search(1, leet.first);
