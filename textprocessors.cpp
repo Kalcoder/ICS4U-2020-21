@@ -2,7 +2,6 @@
 // Created by kaleb on 2021-05-20.
 //
 
-#include <map>
 #include "textprocessors.h"
 
 // Kaleb Text Processors
@@ -21,8 +20,36 @@ void lowercase_letters(string text) {
 
 // Johnny Text Processors
 
+const std::map<char, std::string> leets = {
+    {'a', "4"},
+    {'b', "6"},
+    {'c', "["},
+    {'d', "|)"},
+    {'e', "3"},
+    {'f', "|="},
+    {'g', "9"},
+    {'h', "#"},
+    {'i', "!"},
+    {'j', "._|"},
+    {'k', "|<"},
+    {'l', "1"},
+    {'m', "/\\/\\"},
+    {'n', "/\\/"},
+    {'o', "0"},
+    {'p', "|*"},
+    {'q', "0_"},
+    {'r', "|2"},
+    {'s', "5"},
+    {'t', "7"},
+    {'u', "|_|"},
+    {'v', "\\/"},
+    {'w', "\\/\\/"},
+    {'x', "><"},
+    {'y', "`/"},
+    {'z', "7_"},
+};
+
 void leet_case(string text) {
-    std::map<char, std::string> leets {};
     lowercase_letters(text); // Compares everything at lowercase since it's easier
     for (const auto& leet : leets) {
         string search(1, leet.first);

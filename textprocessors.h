@@ -5,8 +5,11 @@
 #ifndef FINAL_PROJECT_TEXTPROCESSORS_H
 #define FINAL_PROJECT_TEXTPROCESSORS_H
 #include <string>
+#include <map>
 #include <iostream>
 using namespace std;
+
+extern const std::map<char, std::string> leets;
 
 // Kaleb Text Processors
 int count_words(char *text);
