@@ -17,6 +17,6 @@ void lowercase_letters(char *text);
 void leet_case(char *text);
 void capitalize_letters(char *text);
 void capitalize_letters(string &text); 
-void search_replace(string &text, string &search, string &replace);
+void search_replace(string &text, const string search, const string replace);
 
 #endif //FINAL_PROJECT_TEXTPROCESSORS_H
