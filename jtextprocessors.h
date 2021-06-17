@@ -9,6 +9,6 @@
 // Johnny Text Processors
 std::string leet_case(std::string text);
 std::string capitalize_letters(std::string text);
-std::string search_replace(std::string text, std::string search, std::string replace);
+std::string search_replace(std::string text, const std::string search, const std::string replace);
 
 #endif //FINAL_PROJECT_TEXTPROCESSORS_H

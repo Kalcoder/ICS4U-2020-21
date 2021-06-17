@@ -14,6 +14,6 @@ std::string capitalize_letters(std::string text) {
     return "test";
 }
 
-std::string search_replace(std::string text, std::string search, std::string replace) {
+std::string search_replace(std::string text, const std::string search, const std::string replace) {
     return "test";
 }
