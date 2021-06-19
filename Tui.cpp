@@ -18,11 +18,11 @@ void Tui::render() {
     auto c_count_digits         = Checkbox(L"Enabled", &enable_count_digits);
     auto c_search_replace       = Checkbox(L"Enabled", &enable_search_replace);
 
-    // Search and replace is a pain
+    // Declare search & replace input boxes
     auto i_search  = Input(&searchText,  L"Search...");
     auto i_replace = Input(&replaceText, L"Replace...");
 
-    // Define the layout for the inputs (Container::Vertical is ↕, Container::Horizontal is <->)
+    // Define the layout for the inputs (Container::Vertical is ↕, Container::Horizontal is ↔)
     auto component_container = Container::Vertical({
         input,
         Container::Horizontal({
@@ -77,6 +77,7 @@ Element Tui::TextProcessorWindow(std::wstring description, bool & controlling_bo
 }
 
 Element Tui::TextCounterWindow(std::wstring description, bool & controlling_bool, Component checkbox, std::function<int(std::string)> processor) {
+    // Return a new window that contains the inputted title, the processed text if the checkbox is turned on, and the checkbox to control the processor
     return window(text(description), vbox({
             text(controlling_bool ? std::to_wstring(processor(wstr_to_str(text_to_process))) : L"") | border | hcenter | color(controlling_bool ? Color::White : Color::GrayDark),
             checkbox->Render() | hcenter
@@ -85,6 +86,7 @@ Element Tui::TextCounterWindow(std::wstring description, bool & controlling_bool
 }
 
 Element Tui::TextSearchReplaceWindow(std::wstring description, bool & controlling_bool, Component checkbox, Component searchInput, Component replaceInput, std::function<std::string(std::string, std::string, std::string)> processor) {
+    // Return a new window that contains the inputted title, the search input, the replace input, the processed text if the checkbox is turned on, and the checkbox to control the processor
     return window(text(description), vbox({
              hbox({
                       text(L"Search: "),
