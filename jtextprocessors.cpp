@@ -34,8 +34,13 @@ const std::map<char, std::string> leets = {
     {'x', "><"},
     {'y', "`/"},
     {'z', "7_"},
-};
+}; // Replacement characters for the leet_case function
 
+/**
+ * Converts a string of text into a leet_case
+ * @param text The text to convert
+ * @return Converted Text
+ */
 std::string leet_case(std::string text) {
     text = lowercase_letters(text); // Compares everything at lowercase since it's easier
     for (const auto& leet : leets) {
@@ -45,7 +50,11 @@ std::string leet_case(std::string text) {
     return text;
 }
 
-
+/**
+ * Capitalizes all letters from text
+ * @param text The text to capitalize
+ * @return The capitalized string
+ */
 std::string capitalize_letters(std::string text) {
     for (int i = 0; text[i] != '\0'; ++i) {
         text[i] = (char) toupper(text[i]);
@@ -53,7 +62,13 @@ std::string capitalize_letters(std::string text) {
     return text;
 }
 
-
+/**
+ * Searches through lowercase text and replaces keywords
+ * @param text The string to go through
+ * @param search The string to search for
+ * @param replace The string to replace with.
+ * @return The fully filtered string
+ */
 std::string search_replace(std::string text, const std::string search, const std::string replace) {
     unsigned int skips = 0; // Number of characters to skip if we just replaced something
     for (int i = 0; text[i] != '\0'; ++i) { // going through each character of text
