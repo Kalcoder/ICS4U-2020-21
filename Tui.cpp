@@ -15,11 +15,10 @@ void Tui::render() {
     auto c_capitalize_letters   = Checkbox(L"Enabled", &enable_capitalize_letters);
     auto c_leet_case            = Checkbox(L"Enabled", &enable_leet_case);
     auto c_count_words          = Checkbox(L"Enabled", &enable_count_words);
-    auto c_count_numbers        = Checkbox(L"Enabled", &enable_count_numbers);
+    auto c_count_digits         = Checkbox(L"Enabled", &enable_count_digits);
     auto c_search_replace       = Checkbox(L"Enabled", &enable_search_replace);
 
     // Search and replace is a pain
-
     auto i_search  = Input(&searchText,  L"Search...");
     auto i_replace = Input(&replaceText, L"Replace...");
 
@@ -33,7 +32,7 @@ void Tui::render() {
         }),
         Container::Horizontal({
             c_count_words,
-            c_count_numbers,
+            c_count_digits,
             Container::Vertical({
                 Container::Horizontal({
                     i_search,
@@ -56,7 +55,7 @@ void Tui::render() {
                             }),
                             hbox({
                                      TextCounterWindow(L"Count Words",      enable_count_words,   c_count_words,   count_words),      // Custom text counter window with the title "Count Words" that controls count_words
-                                     TextCounterWindow(L"Count Numbers",    enable_count_numbers, c_count_numbers, count_numbers),  // Custom text counter window with the title "Count Numbers" that controls count_numbers
+                                     TextCounterWindow(L"Count Digits",     enable_count_digits,  c_count_digits,  count_digits),    // Custom text counter window with the title "Count Numbers" that controls count_numbers
 
                                      TextSearchReplaceWindow(L"Search & Replace", enable_search_replace, c_search_replace, i_search, i_replace, search_replace), // Custom search & replace window with the title "Search & Replace" that controls search_replace
                             })

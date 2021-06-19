@@ -27,7 +27,7 @@ private:
     std::wstring replaceText;
 
     bool enable_count_words         = false;
-    bool enable_count_numbers       = false;
+    bool enable_count_digits        = false;
     bool enable_lowercase_letters   = false;
     bool enable_leet_case           = false;
     bool enable_capitalize_letters  = false;

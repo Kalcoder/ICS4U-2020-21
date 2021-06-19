@@ -21,7 +21,7 @@ int count_words(const std::string text) {
     return count;
 }
 
-int count_numbers(const std::string text) {
+int count_digits(const std::string text) {
     int count = 0;
     for (int i = 0; text[i] != '\0'; i++) {
         char currentChar = text[i];
