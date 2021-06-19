@@ -68,26 +68,26 @@ void Tui::render() {
     screen.Loop(document);
 }
 
-Element Tui::TextProcessorWindow(std::wstring description, bool & controlling_bool, Component checkbox, std::function<std::string(std::string)> processor) {
-    return window(text(description), vbox({
+Element Tui::TextProcessorWindow(std::wstring title, bool & controlling_bool, Component checkbox, std::function<std::string(std::string)> processor) {
+    return window(text(title), vbox({
                text(controlling_bool ? str_to_wstr(processor(wstr_to_str(text_to_process))) : L"") | border | hcenter | color(controlling_bool ? Color::White : Color::GrayDark),
                checkbox->Render() | hcenter
         })
     ) | flex;
 }
 
-Element Tui::TextCounterWindow(std::wstring description, bool & controlling_bool, Component checkbox, std::function<int(std::string)> processor) {
+Element Tui::TextCounterWindow(std::wstring title, bool & controlling_bool, Component checkbox, std::function<int(std::string)> processor) {
     // Return a new window that contains the inputted title, the processed text if the checkbox is turned on, and the checkbox to control the processor
-    return window(text(description), vbox({
+    return window(text(title), vbox({
             text(controlling_bool ? std::to_wstring(processor(wstr_to_str(text_to_process))) : L"") | border | hcenter | color(controlling_bool ? Color::White : Color::GrayDark),
             checkbox->Render() | hcenter
         })
     ) | flex;
 }
 
-Element Tui::TextSearchReplaceWindow(std::wstring description, bool & controlling_bool, Component checkbox, Component searchInput, Component replaceInput, std::function<std::string(std::string, std::string, std::string)> processor) {
+Element Tui::TextSearchReplaceWindow(std::wstring title, bool & controlling_bool, Component checkbox, Component searchInput, Component replaceInput, std::function<std::string(std::string, std::string, std::string)> processor) {
     // Return a new window that contains the inputted title, the search input, the replace input, the processed text if the checkbox is turned on, and the checkbox to control the processor
-    return window(text(description), vbox({
+    return window(text(title), vbox({
              hbox({
                       text(L"Search: "),
                       searchInput->Render(),

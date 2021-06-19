@@ -68,29 +68,29 @@ private:
     /**
      * Creates a new window Element that contains the inputted title, the processed text if the checkbox is turned on, and the checkbox to control the processor
      *
-     * @param description The title of the window
+     * @param title The title of the window
      * @param controlling_bool The bool to control if <code>processor</code> should run
      * @param checkbox The checkbox <code>Component</code> to set <code>controlling_bool</code>
      * @param processor The string processor to run on <code>text_to_process</code>
      * @return New window Element that contains the inputted title, the processed text if the checkbox is turned on, and the checkbox to control the processor
      */
-    Element TextProcessorWindow(std::wstring description, bool & controlling_bool, Component checkbox, std::function<std::string(std::string)> processor);
+    Element TextProcessorWindow(std::wstring title, bool & controlling_bool, Component checkbox, std::function<std::string(std::string)> processor);
 
     /**
     * Creates a new window Element that contains the inputted title, the counted text if the checkbox is turned on, and the checkbox to control the processor
     *
-    * @param description The title of the window
+    * @param title The title of the window
     * @param controlling_bool The bool to control if <code>processor</code> should run
     * @param checkbox The checkbox <code>Component</code> to set <code>controlling_bool</code>
     * @param processor The string counter to run on <code>text_to_process</code>
     * @return New window Element that contains the inputted title, the processed text if the checkbox is turned on, and the checkbox to control the processor
     */
-    Element TextCounterWindow(std::wstring description, bool & controlling_bool, Component checkbox, std::function<int(std::string)> processor);
+    Element TextCounterWindow(std::wstring title, bool & controlling_bool, Component checkbox, std::function<int(std::string)> processor);
 
     /**
      * Creates a new search & replace window Element that contains the inputted title, the search/replace inputs, the replaced text if the checkbox is turned on, and the checkbox to control the search/replace processor
      *
-     * @param description The title of the window
+     * @param title The title of the window
      * @param controlling_bool The bool to control if <code>processor</code> should run
      * @param checkbox The checkbox <code>Component</code> to set <code>controlling_bool</code>
      * @param searchInput  The input that controls the text to search for in <code>text_to_process</code>
@@ -98,7 +98,7 @@ private:
      * @param processor The search & replace processor to run on <code>text_to_process</code>
      * @return  New search & replace window Element that contains the inputted title, the search/replace inputs, the replaced text if the checkbox is turned on, and the checkbox to control the search/replace processor
      */
-    Element TextSearchReplaceWindow(std::wstring description, bool & controlling_bool, Component checkbox, Component searchInput, Component replaceInput, std::function<std::string(std::string, std::string, std::string)> processor);
+    Element TextSearchReplaceWindow(std::wstring title, bool & controlling_bool, Component checkbox, Component searchInput, Component replaceInput, std::function<std::string(std::string, std::string, std::string)> processor);
 };
 
 #endif //FINAL_PROJECT_TUI_H
