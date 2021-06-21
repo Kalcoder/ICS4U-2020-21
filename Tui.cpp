@@ -15,15 +15,14 @@ void Tui::render() {
     auto c_capitalize_letters   = Checkbox(L"Enabled", &enable_capitalize_letters);
     auto c_leet_case            = Checkbox(L"Enabled", &enable_leet_case);
     auto c_count_words          = Checkbox(L"Enabled", &enable_count_words);
-    auto c_count_numbers        = Checkbox(L"Enabled", &enable_count_numbers);
+    auto c_count_digits         = Checkbox(L"Enabled", &enable_count_digits);
     auto c_search_replace       = Checkbox(L"Enabled", &enable_search_replace);
 
-    // Search and replace is a pain
-
+    // Declare search & replace input boxes
     auto i_search  = Input(&searchText,  L"Search...");
     auto i_replace = Input(&replaceText, L"Replace...");
 
-    // Define the layout for the inputs (Container::Vertical is ↕, Container::Horizontal is <->)
+    // Define the layout for the inputs (Container::Vertical is ↕, Container::Horizontal is ↔)
     auto component_container = Container::Vertical({
         input,
         Container::Horizontal({
@@ -33,7 +32,7 @@ void Tui::render() {
         }),
         Container::Horizontal({
             c_count_words,
-            c_count_numbers,
+            c_count_digits,
             Container::Vertical({
                 Container::Horizontal({
                     i_search,
@@ -56,7 +55,7 @@ void Tui::render() {
                             }),
                             hbox({
                                      TextCounterWindow(L"Count Words",      enable_count_words,   c_count_words,   count_words),      // Custom text counter window with the title "Count Words" that controls count_words
-                                     TextCounterWindow(L"Count Numbers",    enable_count_numbers, c_count_numbers, count_numbers),  // Custom text counter window with the title "Count Numbers" that controls count_numbers
+                                     TextCounterWindow(L"Count Digits",     enable_count_digits,  c_count_digits,  count_digits),    // Custom text counter window with the title "Count Numbers" that controls count_numbers
 
                                      TextSearchReplaceWindow(L"Search & Replace", enable_search_replace, c_search_replace, i_search, i_replace, search_replace), // Custom search & replace window with the title "Search & Replace" that controls search_replace
                             })
@@ -69,24 +68,26 @@ void Tui::render() {
     screen.Loop(document);
 }
 
-Element Tui::TextProcessorWindow(std::wstring description, bool & controlling_bool, Component checkbox, std::function<std::string(std::string)> processor) {
-    return window(text(description), vbox({
+Element Tui::TextProcessorWindow(std::wstring title, bool & controlling_bool, Component checkbox, std::function<std::string(std::string)> processor) {
+    return window(text(title), vbox({
                text(controlling_bool ? str_to_wstr(processor(wstr_to_str(text_to_process))) : L"") | border | hcenter | color(controlling_bool ? Color::White : Color::GrayDark),
                checkbox->Render() | hcenter
         })
     ) | flex;
 }
 
-Element Tui::TextCounterWindow(std::wstring description, bool & controlling_bool, Component checkbox, std::function<int(std::string)> processor) {
-    return window(text(description), vbox({
+Element Tui::TextCounterWindow(std::wstring title, bool & controlling_bool, Component checkbox, std::function<int(std::string)> processor) {
+    // Return a new window that contains the inputted title, the processed text if the checkbox is turned on, and the checkbox to control the processor
+    return window(text(title), vbox({
             text(controlling_bool ? std::to_wstring(processor(wstr_to_str(text_to_process))) : L"") | border | hcenter | color(controlling_bool ? Color::White : Color::GrayDark),
             checkbox->Render() | hcenter
         })
     ) | flex;
 }
 
-Element Tui::TextSearchReplaceWindow(std::wstring description, bool & controlling_bool, Component checkbox, Component searchInput, Component replaceInput, std::function<std::string(std::string, std::string, std::string)> processor) {
-    return window(text(description), vbox({
+Element Tui::TextSearchReplaceWindow(std::wstring title, bool & controlling_bool, Component checkbox, Component searchInput, Component replaceInput, std::function<std::string(std::string, std::string, std::string)> processor) {
+    // Return a new window that contains the inputted title, the search input, the replace input, the processed text if the checkbox is turned on, and the checkbox to control the processor
+    return window(text(title), vbox({
              hbox({
                       text(L"Search: "),
                       searchInput->Render(),

@@ -45,14 +45,12 @@ std::string leet_case(std::string text) {
     return text;
 }
 
-
 std::string capitalize_letters(std::string text) {
     for (int i = 0; text[i] != '\0'; ++i) {
         text[i] = (char) toupper(text[i]);
     }
     return text;
 }
-
 
 std::string search_replace(std::string text, const std::string search, const std::string replace) {
     unsigned int skips = 0; // Number of characters to skip if we just replaced something
